@@ -13,6 +13,7 @@ app.use(express.urlencoded({ extended: true }))
 //Controllers and Routes
 app.use('/players', require('./controllers/players'))
 app.use('/holes', require('./controllers/holes'))
+app.use('/leaderboard', require('./controllers/leaderboard'))
 
 //Listening on Port
 app.listen(process.env.PORT, () => {
