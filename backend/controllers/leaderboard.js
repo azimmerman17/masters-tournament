@@ -9,10 +9,9 @@ let year = new Date().getFullYear()
 router.get('/', async (req, res) => {
   let pairingsRes = await axios.get(`https://www.masters.com/en_US/scores/feeds/${year}/pairings.json`)
   let pairings = pairingsRes.data
-  console.log(pairings)
   let leaderboardRes = await axios.get(`https://www.masters.com/en_US/scores/feeds/${year}/scores.json`)
   let leaderboard =leaderboardRes.data
-  res.send({
+  res.status(200).send({
     pairings,
     leaderboard
   })
