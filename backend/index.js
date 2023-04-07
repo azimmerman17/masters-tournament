@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }))
 
 //Controllers and Routes
 app.use('/players', require('./controllers/players'))
-
+app.use('/holes', require('./controllers/holes'))
 
 //Listening on Port
 app.listen(process.env.PORT, () => {
