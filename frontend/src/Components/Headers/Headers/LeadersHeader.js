@@ -5,7 +5,6 @@ import toParColor from "../../Functions/toParColor"
 
 
 const LeaderHeader = ({ leader, currentRound }) => {
-  console.log(leader)
   const { display_name, pos, topar, today, thru, teetime, id } = leader
   let year = new Date().getFullYear()
 

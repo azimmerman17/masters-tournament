@@ -1,5 +1,4 @@
 const toParColor = (score) => {
-  console.log(score)
   if (score < 0) {
     return 'red'
   } else if (score > 0) {

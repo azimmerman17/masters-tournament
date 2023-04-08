@@ -31,7 +31,7 @@ const Leaders = () => {
     <Container fluid className='p-1'>
       <Row className='header'>
         <Col className='col-1'>
-        <h5>R{currentRound}</h5>
+        <h3>R{currentRound}</h3>
         </Col>
         {tournamentLeaders}
       </Row>
