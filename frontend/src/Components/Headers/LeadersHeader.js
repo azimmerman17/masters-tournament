@@ -1,8 +1,7 @@
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import toParColor from "../../Functions/toParColor"
-
+import toParColor from "../Functions/toParColor"
 
 const LeaderHeader = ({ leader, currentRound }) => {
   const { display_name, pos, topar, today, thru, teetime, id } = leader

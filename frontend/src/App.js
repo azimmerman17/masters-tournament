@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { DataContext } from './Context/DataContext'
 
 import './App.css';
-import NavBar from './Components/Headers/Headers/Navbar';
-import Leaders from './Components/Headers/Headers/Leaders';
+import NavBar from './Components/Headers/Navbar';
+import Leaders from './Components/Headers/Leaders';
+import Alerts from './Components/Headers/Alerts';
 
 function App() {
   let [data, setdata] = useState({})
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,7 +17,7 @@ function App() {
       const resData = await response.json()
       if (resData) setdata(resData)
     }
-
+ 
     fetchData()
     const intervalId = setInterval(() => {
       fetchData()
@@ -25,13 +25,15 @@ function App() {
 
     return () => clearInterval(intervalId)
   },[])
-
-
+  
+  console.log(data)
+  
   return (
     <div className='App'>
       <DataContext.Provider value={data}>
         <Router>
           <header>
+            <Alerts />
             <Leaders />
             <NavBar />
           </header>
@@ -39,9 +41,9 @@ function App() {
             <h1>Masters</h1>
             <Routes>
               {/* <Route exact path='/' /> */}
-              {/* <Route path='/leaderboard' />
-              <Route path='/players' />
-              <Route path='/course' /> */}
+              {/* <Route path='/leaderboard' /> */}
+              {/* <Route path='/players' /> */}
+              {/* <Route path='/course' /> */}
             </Routes>
           </main>
         </Router>

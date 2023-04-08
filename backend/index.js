@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/players', require('./controllers/players'))
 app.use('/holes', require('./controllers/holes'))
 app.use('/leaderboard', require('./controllers/leaderboard'))
+app.use('/alerts', require('./controllers/alerts'))
 
 //Listening on Port
 app.listen(process.env.PORT, () => {
