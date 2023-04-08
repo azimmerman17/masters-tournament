@@ -6,6 +6,7 @@ import './App.css';
 import NavBar from './Components/Headers/Navbar';
 import Leaders from './Components/Headers/Leaders';
 import Alerts from './Components/Headers/Alerts';
+import HomePage from './Components/Home/HomePage'
 
 function App() {
   let [data, setdata] = useState({})
@@ -26,8 +27,6 @@ function App() {
     return () => clearInterval(intervalId)
   },[])
   
-  console.log(data)
-  
   return (
     <div className='App'>
       <DataContext.Provider value={data}>
@@ -37,10 +36,9 @@ function App() {
             <Leaders />
             <NavBar />
           </header>
-          <main className="p-3" style={{marginTop: '75px'}}>
-            <h1>Masters</h1>
+          <main className="p-3">
             <Routes>
-              {/* <Route exact path='/' /> */}
+              <Route exact path='/' element={<HomePage />} />
               {/* <Route path='/leaderboard' /> */}
               {/* <Route path='/players' /> */}
               {/* <Route path='/course' /> */}

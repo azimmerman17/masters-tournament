@@ -3,15 +3,15 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import toParColor from "../Functions/toParColor"
 
-const LeaderHeader = ({ leader, currentRound }) => {
+const LeaderHeader = ({ leader }) => {
   const { display_name, pos, topar, today, thru, teetime, id } = leader
   let year = new Date().getFullYear()
 
   const round = () => {
-    if (thru !== 0) {
+    console.log(thru)
+    if (thru) {
       return (
         <small>
-           <span>R{currentRound}: </span>
           <span style={{color: toParColor(today)}}>{today}</span>
           <span> thru {thru}</span>
         </small>
@@ -19,7 +19,6 @@ const LeaderHeader = ({ leader, currentRound }) => {
     }
     return (
       <small>
-        <span>R{currentRound}: </span>
         <span>{teetime}</span>
       </small>
     )

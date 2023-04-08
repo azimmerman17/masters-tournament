@@ -15,6 +15,8 @@ app.use('/players', require('./controllers/players'))
 app.use('/holes', require('./controllers/holes'))
 app.use('/leaderboard', require('./controllers/leaderboard'))
 app.use('/alerts', require('./controllers/alerts'))
+app.use('/news', require('./controllers/news'))
+
 
 //Listening on Port
 app.listen(process.env.PORT, () => {

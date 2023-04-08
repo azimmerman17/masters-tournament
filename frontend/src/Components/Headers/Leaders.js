@@ -27,7 +27,7 @@ const Leaders = () => {
   const tournamentLeaders = leaders.map(leader => {
     const { id } = leader
     return (
-      <Col className='col border border-1' key={`leader-${id}`}><LeaderHeader leader={leader} currentRound={round}/></Col>
+      <Col className='col border border-1' key={`leader-${id}`}><LeaderHeader leader={leader} /></Col>
     )
   })
 
