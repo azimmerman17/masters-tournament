@@ -1,6 +1,7 @@
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from 'react-bootstrap/Button'
+import Stack from "react-bootstrap/Stack"
 
 const Articles = ({ news }) => {
   const { active, content } = news
@@ -22,12 +23,12 @@ const Articles = ({ news }) => {
 
   if (active === true) {
     return (
-      <div className='m-a'>
-        <h4>Latest News</h4>
+      <Stack gap={2} className='m-a'>
+        <h3>Latest News</h3>
         <Row className='p-1 m-1'>
           {showNews}
         </Row>
-      </div>
+      </Stack>
     )
   }
 }

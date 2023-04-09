@@ -10,3 +10,13 @@
   height: 100px;
   width: 100px;
 }
+
+.img-thumbnail-sm {
+  height: 50px;
+  width: 50px;
+}
+
+.img-thumbnail-xsm {
+  height: 33px;
+  width: 33px;
+}

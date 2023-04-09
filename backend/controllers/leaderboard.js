@@ -17,6 +17,14 @@ router.get('/', async (req, res) => {
   })
 })
 
+router.get('/par3contest', async (req, res) => {
+  let response = await axios.get(`https://www.masters.com/en_US/scores/feeds/${year}/par3contest.json`)
+  let leaderboard =response.data
+  res.status(200).send({
+    leaderboard
+  })
+})
+
 
 
 module.exports = router

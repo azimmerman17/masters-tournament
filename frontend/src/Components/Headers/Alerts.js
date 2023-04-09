@@ -22,8 +22,8 @@ const Alerts = () => {
 
   const alertMessage = () => {
     if (alert !== {}) {
-      const { link, title } = alert
-      return <h6><a href={link} target='_blank'>{title}</a></h6>
+      const { link, title, linkText } = alert
+      return <h6 className="p-1"><a href={link} target='_blank' rel='noreferrer'>{linkText || title}</a></h6>
     }
     return <p>NO ALERT</p>
   }

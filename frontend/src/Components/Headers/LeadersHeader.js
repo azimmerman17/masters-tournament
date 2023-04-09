@@ -1,18 +1,17 @@
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
-import toParColor from "../Functions/toParColor"
+import ToParColor from "../Functions/ToParColor"
 
 const LeaderHeader = ({ leader }) => {
   const { display_name, pos, topar, today, thru, teetime, id } = leader
   let year = new Date().getFullYear()
 
   const round = () => {
-    console.log(thru)
     if (thru) {
       return (
         <small>
-          <span style={{color: toParColor(today)}}>{today}</span>
+          <span style={{color: ToParColor(today)}}>{today}</span>
           <span> thru {thru}</span>
         </small>
       )
@@ -40,7 +39,7 @@ const LeaderHeader = ({ leader }) => {
           <Row>
             <h5>
               <span>Total: </span>
-              <span style={{color: toParColor(topar)}}>{topar}</span>
+              <span style={{color: ToParColor(topar)}}>{topar}</span>
             </h5>
           </Row>
           <Row>

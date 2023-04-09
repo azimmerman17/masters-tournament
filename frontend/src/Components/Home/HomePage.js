@@ -35,21 +35,13 @@ const HomePage = () => {
       return (
         <Stack gap={3}>
           <h3>{displayDate}</h3>
-          <LeadersHome leaderboard={leaderboard} />
+          <LeadersHome leaderboardData={leaderboard} />
           <Articles news={news} />
         </Stack>
       )
     } catch (error) {}
   }
 
-  const showLeaders = () => {
-    return (
-      <h4>Latest News</h4>
-
-    )
-
-  }
-  console.log(leaderboard)
   return (
     <div>
       {showHome()}
