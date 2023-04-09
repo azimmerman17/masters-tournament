@@ -8,6 +8,7 @@ import Leaders from './Components/Headers/Leaders';
 import Alerts from './Components/Headers/Alerts';
 import HomePage from './Components/Home/HomePage'
 import CourseIndex from './Components/Course/CourseIndex';
+import Hole from './Components/Course/Hole';
 
 function App() {
   let [data, setdata] = useState({})
@@ -43,6 +44,7 @@ function App() {
               {/* <Route path='/leaderboard' /> */}
               {/* <Route path='/players' /> */}
               <Route path='/course' element={<CourseIndex />}/>
+              <Route path='/course/:holeId' element={<Hole />}/>
             </Routes>
           </main>
         </Router>
