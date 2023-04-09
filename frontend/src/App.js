@@ -7,6 +7,7 @@ import NavBar from './Components/Headers/Navbar';
 import Leaders from './Components/Headers/Leaders';
 import Alerts from './Components/Headers/Alerts';
 import HomePage from './Components/Home/HomePage'
+import CourseIndex from './Components/Course/CourseIndex';
 
 function App() {
   let [data, setdata] = useState({})
@@ -41,7 +42,7 @@ function App() {
               <Route exact path='/' element={<HomePage />} />
               {/* <Route path='/leaderboard' /> */}
               {/* <Route path='/players' /> */}
-              {/* <Route path='/course' /> */}
+              <Route path='/course' element={<CourseIndex />}/>
             </Routes>
           </main>
         </Router>

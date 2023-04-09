@@ -3,7 +3,7 @@ import toParColor from "../Functions/ToParColor"
 const TableRowData = ({ player, columns }) => {
   const { amateur, display_name2, first_name, id, pos, round1, round2, round3, round4, teetime, thru, today, topar, total } = player
   const year = new Date().getFullYear()
-  console.log(player)
+  
   let roundsPlayed = 0
   if (round4.roundStatus === 'Finished') roundsPlayed = 4
   else if (round3.roundStatus === 'Finished') roundsPlayed = 3
@@ -23,7 +23,7 @@ const TableRowData = ({ player, columns }) => {
       case 'Player':
         return (
           <td key={`${id}-${column}`} className='text-start'>
-            <img src={`https://images.masters.com/players/${year}/240x240/${id}.jpg`} className='img-thumbnail-xsm rounded-circle mx-2'/>
+            <img src={`https://images.masters.com/players/${year}/240x240/${id}.jpg`} alt='' className='img-thumbnail-xsm rounded-circle mx-2'/>
             <strong>{first_name} {display_name2}</strong>
             {amateur === true ? ' (A)' : null} 
           </td>

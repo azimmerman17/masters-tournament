@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
   res.send(holes)
 })
 
-// Get 1 player
+// Get 1 hole
 router.get('/:holeId', async (req, res) => {
   let holeId = Number(req.params.holeId)
   let response = await axios.get(`https://www.masters.com/en_US/json/man/course/holes.json`)
