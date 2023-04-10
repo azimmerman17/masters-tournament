@@ -1,7 +1,7 @@
 import Table from 'react-bootstrap/Table'
 
-import TableHeadings from './TableHeadings'
-import TableRows from './TableRows'
+import TableHeadings from '../Tables/TableHeadings'
+import TableRows from '../Tables/TableRows'
 
 const TraditionalLB = ({ leaderboard }) => {
   let columns = [
@@ -19,7 +19,7 @@ const TraditionalLB = ({ leaderboard }) => {
   return (
     <Table bordered size="sm">
       <TableHeadings columns={columns} />
-      <TableRows players={leaderboard} columns={columns} />
+      <TableRows rows={leaderboard} columns={columns} />
     </Table>
   )
 }

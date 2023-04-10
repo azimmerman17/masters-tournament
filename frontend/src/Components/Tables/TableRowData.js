@@ -1,17 +1,19 @@
 import toParColor from "../Functions/ToParColor"
 
-const TableRowData = ({ player, columns }) => {
-  const { amateur, display_name2, first_name, id, pos, round1, round2, round3, round4, teetime, thru, today, topar, total } = player
+const TableRowData = ({ row, columns, i }) => {
+  // console.log(row)
+  // console.log(columns)
+  // LeaderBoard Data
+  const { amateur, display_name2, first_name, id, pos, round1, round2, round3, round4, teetime, thru, today, topar, total} = row
+  // Course Stats Data
+  const { avg, birdies, bogeys, doublebogeys, eagles, par, pars, rank } = row
   const year = new Date().getFullYear()
   
-  let roundsPlayed = 0
-  if (round4.roundStatus === 'Finished') roundsPlayed = 4
-  else if (round3.roundStatus === 'Finished') roundsPlayed = 3
-  else if (round2.roundStatus === 'Finished') roundsPlayed = 2
-  else if (round1.roundStatus === 'Finished') roundsPlayed = 1
+
 
   const data = columns.map((column) => {
     switch (column) {
+      // LeaderBoard Columns
       case 'pos':
         return (
           <td key={`${id}-${column}`}>
@@ -55,6 +57,11 @@ const TableRowData = ({ player, columns }) => {
       case 'R4':
         return <td key={`${id}-${column}`} style={{color: toParColor(round4.total - 72)}}>{round4.total}</td>
       case 'Agg':
+        let roundsPlayed = 0
+        if (round4.roundStatus === 'Finished') roundsPlayed = 4
+        else if (round3.roundStatus === 'Finished') roundsPlayed = 3
+        else if (round2.roundStatus === 'Finished') roundsPlayed = 2
+        else if (round1.roundStatus === 'Finished') roundsPlayed = 1
         return (
           <td key={`${id}-${column}`} style={{color: toParColor(total - roundsPlayed * 72)}}>
             <strong>
@@ -62,6 +69,23 @@ const TableRowData = ({ player, columns }) => {
             </strong>
           </td>
         )
+      // Hole Stats Columns
+    case 'Round':
+    return <td key={`R${i + 1}-${column}`}>R{i + 1}</td>
+    case 'Par':
+    return <td key={`R${i + 1}-${column}`}>{par}</td>
+    case 'Average	Rank':
+    return <td key={`R${i + 1}-${column}`}>{avg}</td>
+    case 'Eagles -':
+    return <td key={`R${i + 1}-${column}`}>{eagles}</td>
+    case 'Birdies':
+    return <td key={`R${i + 1}-${column}`}>{birdies}</td>
+    case 'Pars':
+    return <td key={`R${i + 1}-${column}`}>{pars}</td>
+    case 'Bogeys':
+    return <td key={`R${i + 1}-${column}`}>{bogeys}</td>
+    case 'Double Bogeys +':
+    return <td key={`R${i + 1}-${column}`}>{doublebogeys}</td>
       default:
         return <td key={`${id}-${column}`}>N/A</td>
     }

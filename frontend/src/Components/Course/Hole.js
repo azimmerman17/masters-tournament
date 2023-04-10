@@ -4,6 +4,7 @@ import { AiOutlineCaretLeft } from 'react-icons/ai'
 
 import HoleImages from './HoleImages'
 import Stack from 'react-bootstrap/Stack'
+import HoleStats from './HoleStats'
 
 const Hole = () => {
   const { holeId } = useParams()
@@ -27,14 +28,15 @@ const Hole = () => {
       imageList.push(image)
     })
   } catch (error) {}
-  // console.log(hole)
-  // console.log(imageList)
+  const { des_hole, cstats } = hole 
+
   return (
     <Stack gap={2}>
       <a href='/course' className='text-start text-decoration-none'>
         <AiOutlineCaretLeft /> Back to Course
       </a>
       <HoleImages imageList={imageList} hole={hole} />
+      <HoleStats des_hole={des_hole} cstats={cstats} />
     </Stack>
   )
 }
