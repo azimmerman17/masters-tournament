@@ -6,7 +6,8 @@ const HoleStats = ({ des_hole, cstats }) => {
   const columns = [
     'Round',
     'Par',
-    'Average	Rank',
+    'Average',
+    'Rank',
     'Eagles -',
     'Birdies',
     'Pars',

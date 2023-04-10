@@ -74,8 +74,10 @@ const TableRowData = ({ row, columns, i }) => {
     return <td key={`R${i + 1}-${column}`}>R{i + 1}</td>
     case 'Par':
     return <td key={`R${i + 1}-${column}`}>{par}</td>
-    case 'Average	Rank':
+    case 'Average':
     return <td key={`R${i + 1}-${column}`}>{avg}</td>
+    case 'Rank':
+    return <td key={`R${i + 1}-${column}`}>{rank}</td>
     case 'Eagles -':
     return <td key={`R${i + 1}-${column}`}>{eagles}</td>
     case 'Birdies':
