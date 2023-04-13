@@ -21,16 +21,40 @@ const CourseIndex = () => {
   try {
     const { holes } = course
     courseHoles = holes.map(hole => {
-      const { plant, imageL, number, holeDesc } = hole
+      const { plant, imageL, number, par, yds } = hole
       const { src } = imageL
       return (
         <Col key={plant} className='col-4 my-1'>
-          <Button nclassName='m-1 p-1' href={`/course/${number}`}>
+          <Button className='m-1 p-2' href={`/course/${number}`}>
             <Card>
               <Card.Img variant="top" src={`https://www.masters.com${src}`} alt={`Hole ${number} Photo`}/>
-              <Card.Body>
-                <Card.Title className='text-dark'>{plant}</Card.Title>
-                <Card.Text className='text-dark'>{holeDesc}</Card.Text>
+              <Card.Body className='text-dark'>
+                <Card.Title>Hole #{number} - {plant}</Card.Title>
+                <Card.Body>
+                 <Row className='m-0'>
+                  <Col className='col-4 text-center'>
+                    <p className='m-0'>
+                      Par
+                    </p>
+                    <p>
+                      <strong className='m-0'>
+                        {par}
+                      </strong>
+                    </p>
+                  </Col>
+                  <Col className='col-4'></Col>
+                  <Col className='col-4 text-center'>
+                    <p className='m-0'>
+                      Dist
+                    </p>
+                    <p>
+                      <strong className='m-0'>
+                        {yds}
+                      </strong>
+                    </p>
+                  </Col>
+                 </Row>
+                </Card.Body>
               </Card.Body>
             </Card>
           </Button>  
@@ -39,9 +63,6 @@ const CourseIndex = () => {
     })  
   } catch (error) {}
   
-
-  console.log(course)
-
   return (
     <Container>
       <Row className='p-1 m-1'>

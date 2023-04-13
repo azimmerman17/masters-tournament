@@ -6,6 +6,11 @@
   text-align: center;
 }
 
+.img-thumbnail-lg {
+  height: 200px;
+  width: 200px;
+}
+
 .img-thumbnail {
   height: 100px;
   width: 100px;
@@ -19,4 +24,24 @@
 .img-thumbnail-xsm {
   height: 33px;
   width: 33px;
+}
+
+.img-flower {
+  width: 250px;
+  height: 150px;
+}
+
+.vid-flyover {
+  width: 70%;
+  aspect-ratio: 16/9;
+  margin: auto;
+}
+
+.main {
+  width: 80%;
+  margin: auto;
+}
+
+.hole-map {
+  width: 70%;
 }

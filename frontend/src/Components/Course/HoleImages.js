@@ -38,9 +38,9 @@ const HoleImages = ({ imageList, hole }) => {
         <Card.Body>
           <Row>
             <Col className='col-8'>
-              <Card.Title>
+              <h2>
                   Hole #{number} - {plant}
-              </Card.Title>
+              </h2>
             </Col>
             <Col className='col-2'>
                 <h4>{par}</h4>
