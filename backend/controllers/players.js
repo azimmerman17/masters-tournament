@@ -8,7 +8,6 @@ let year = new Date().getFullYear()
 // Get
 // All players
 router.get('/', async (req, res) => {
-  console.log(year)
   let response = await axios.get(`https://www.masters.com/en_US/cms/feeds/players/${year}/players.json`)
   let players = response.data
   res.send(players)

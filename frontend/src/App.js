@@ -9,6 +9,7 @@ import Alerts from './Components/Headers/Alerts';
 import HomePage from './Components/Home/HomePage'
 import CourseIndex from './Components/Course/CourseIndex';
 import Hole from './Components/Course/Hole';
+import PlayersIndex from './Components/Players/PlayersIndex';
 
 function App() {
   let [data, setdata] = useState({})
@@ -42,7 +43,7 @@ function App() {
             <Routes>
               <Route exact path='/' element={<HomePage />} />
               {/* <Route path='/leaderboard' /> */}
-              {/* <Route path='/players' /> */}
+              <Route path='/players' element={<PlayersIndex />}/>
               <Route path='/course' element={<CourseIndex />}/>
               <Route path='/course/:holeId' element={<Hole />}/>
             </Routes>
