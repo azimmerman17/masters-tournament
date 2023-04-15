@@ -5,6 +5,7 @@ import Stack from 'react-bootstrap/Stack';
 
 import PlayerCard from './PlayerCard';
 import PlayersFilter from './PlayersFilter';
+import PastChampionsNotCompeting from './PastChampionsNotCompeting';
 
 const PlayersIndex = () => {
   let [roster, setRoster] = useState({})
@@ -31,14 +32,11 @@ const PlayersIndex = () => {
     'Past Champions'
   ]
   
-  console.log(filter)
   const { players, past_champions_not_competing } = roster 
   
   if (players) {
-    
   const playerList = players.map(player => {
     const { id, amateur, international, first_masters, past_champion } = player
-    console.log(player)
     let show
     switch (filter) {
       case 'Professionals':
@@ -78,6 +76,7 @@ const PlayersIndex = () => {
         <Row className='m-1 p-1'>
           {playerList}
         </Row>
+        <PastChampionsNotCompeting past_champions_not_competing={past_champions_not_competing} />
       </Stack>
     )
   }
