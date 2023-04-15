@@ -34,8 +34,7 @@ const PlayerCard = ({ player }) => {
                 <Col>
                   <img src={`https://www.masters.com/assets/images/flags/${countryCode}_sm.gif`} alt={countryCode}/> {countryName}
                 </Col>
-                <Col></Col>
-                <Col>
+                <Col >
                   {first_masters ? 'First Apperence' : winner() }
                   {/* {Past} {past_champion} {masters_wins} */}
                 </Col>
