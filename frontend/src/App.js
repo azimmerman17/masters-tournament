@@ -10,6 +10,7 @@ import HomePage from './Components/Home/HomePage'
 import CourseIndex from './Components/Course/CourseIndex';
 import Hole from './Components/Course/Hole';
 import PlayersIndex from './Components/Players/PlayersIndex';
+import Player from './Components/PlayerDetails/Player';
 
 function App() {
   let [data, setdata] = useState({})
@@ -44,6 +45,7 @@ function App() {
               <Route exact path='/' element={<HomePage />} />
               {/* <Route path='/leaderboard' /> */}
               <Route path='/players' element={<PlayersIndex />}/>
+              <Route path='/players/:playerId' element={<Player />} />
               <Route path='/course' element={<CourseIndex />}/>
               <Route path='/course/:holeId' element={<Hole />}/>
             </Routes>

@@ -20,11 +20,14 @@ router.get('/:playerId', async (req, res) => {
   let response = await axios.get(`https://www.masters.com/en_US/cms/feeds/players/${year}/players.json`)
   let resData = response.data
   let golfer = resData.players.filter(player => Number(player.id) === playerId)
+  let bioResponse = await axios.get(`https://www.masters.com/en_US/cms/feeds/players/${year}/${playerId}.json`)
+  const { bio } = bioResponse.data
   // add 404 if not found
   playerResponse = await axios.get(`https://www.masters.com/en_US/scores/feeds/${year}/track/${playerId}.json`)
   let data = playerResponse.data
   res.send({
-    golfer,
+    golfer: golfer[0],
+    bio,
     data
   })
 
